@@ -30,6 +30,10 @@ export class RankCommand extends SlashCommand {
   }
 
   async run(ctx: CommandContext): Promise<string> {
+    await ctx.defer();
+
+    let r: string;
+
     await axios
       .get(
         `https://aoe2.net/api/leaderboard?game=aoe2de&leaderboard_id=${ctx.options.tg ? 4 : 3}&start=1&count=10000&search=[TodEs]`
@@ -39,13 +43,13 @@ export class RankCommand extends SlashCommand {
         response.data.leaderboard.map((r, index, array) =>
           tuvieja.push(index + 1 + " " + r.name + " " + r.rating)
         );
-        return tuvieja.join("\n") + "\n PD: Utena tkm 😍";
+        r = tuvieja.join("\n") + "\n PD: Utena tkm 😍";
       })
       .catch(function (error) {
         // handle error
         console.log(error);
       });
 
-    return "Algo se rompio ";
+    return r;
   }
 }
