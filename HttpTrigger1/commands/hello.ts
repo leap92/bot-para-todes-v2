@@ -11,6 +11,7 @@ export class HelloCommand extends SlashCommand {
     let cDesc = {
       name: "hello",
       description: "Says hello to you.",
+      guildIDs: ["867048548838539326"],
       options: [
         {
           type: CommandOptionType.STRING,
