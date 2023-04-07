@@ -40,6 +40,7 @@ import {
         )
         .then(function (response) {
           let tuvieja = [];
+          tuvieja.push(ctx.options.tg ? "Rank de TG" : "Rank de 1v1");
           response.data.leaderboard.map((r, index, array) =>
             tuvieja.push(index + 1 + " " + r.name + " " + r.rating)
           );
