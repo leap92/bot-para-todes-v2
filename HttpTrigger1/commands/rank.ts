@@ -36,7 +36,7 @@ import {
   
       await axios
         .get(
-          `https://aoe2.net/api/leaderboard?game=aoe2de&leaderboard_id=${ctx.options.tg ? 4 : 3}&start=1&count=10000&search=[TodEs]`
+          `https://legacy.aoe2companion.com/api/leaderboard?leaderboard_id=${ctx.options.tg ? 4 : 3}&start=1&count=10000&search=[TodEs]`
         )
         .then(function (response) {
           let tuvieja = [];
